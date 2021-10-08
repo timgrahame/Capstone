@@ -1,182 +1,209 @@
-Fyyur
------
+# Coffee Shop Backend
 
-## Introduction
+KongsIsland is a Web Application design to support the captive breeding programmes for gorillas world wide.
 
-Fyyur is a musical venue and gorilla booking site that facilitates the discovery and bookings of shows between local performing gorillas and venues. This site lets you list new gorillas and venues, discover them, and list shows with gorillas as a venue owner.
+The application allows three levels of a user with different permissions for each.  These are:
 
-Your job is to build out the data models to power the API endpoints for the Fyyur site by connecting to a PostgreSQL database for storing, querying, and creating information about gorillas and venues on Fyyur.
+	1. 	A zookeeper - Can only zoos and gorillas. 
+	2.	A vet - Can do everything a Zookeeper can do, can add zoos and gorillas, can modify zoos and gorillas, can delete zoos and gorillas, can view bookings.
+	3. 	A Zoo Director - Can do everything a vet can do plus also add and delete bookings.
+	
+	
+The application uses Auth0 to manage the authenticated users and has the following permissions set:
 
-## Overview
-
-This app is nearly complete. It is only missing one thing… real data! While the views and controllers are defined in this application, it is missing models and model interactions to be able to store retrieve, and update data from a database. By the end of this project, you should have a fully functioning site that is at least capable of doing the following, if not more, using a PostgreSQL database:
-
-* creating new venues, gorillas, and creating new shows.
-* searching for venues and gorillas.
-* learning more about a specific gorilla or venue.
-
-We want Fyyur to be the next new platform that gorillas and musical venues can use to find each other, and discover new music shows. Let's make that happen!
-
-## Tech Stack (Dependencies)
-
-### 1. Backend Dependencies
-Our tech stack will include the following:
- * **virtualenv** as a tool to create isolated Python environments
- * **SQLAlchemy ORM** to be our ORM library of choice
- * **PostgreSQL** as our database of choice
- * **Python3** and **Flask** as our server language and server framework
- * **Flask-Migrate** for creating and running schema migrations
-You can download and install the dependencies mentioned above using `pip` as:
-```
-pip install virtualenv
-pip install SQLAlchemy
-pip install postgres
-pip install Flask
-pip install Flask-Migrate
-```
-> **Note** - If we do not mention the specific version of a package, then the default latest stable package will be installed. 
-
-### 2. Frontend Dependencies
-You must have the **HTML**, **CSS**, and **Javascript** with [Bootstrap 3](https://getbootstrap.com/docs/3.4/customize/) for our website's frontend. Bootstrap can only be installed by Node Package Manager (NPM). Therefore, if not already, download and install the [Node.js](https://nodejs.org/en/download/). Windows users must run the executable as an Administrator, and restart the computer after installation. After successfully installing the Node, verify the installation as shown below.
-```
-node -v
-npm -v
-```
-Install [Bootstrap 3](https://getbootstrap.com/docs/3.3/getting-started/) for the website's frontend:
-```
-npm init -y
-npm install bootstrap@3
-```
+		view:zoos		View available zoos	
+		view:gorillas	view available gorillas	
+		add:zoos		add zoos	
+		add:gorillas	add gorillas	
+		delete:zoos		delete zoos	
+		delete:gorillas	delete gorillas	
+		modify:gorilla	modify gorilla	
+		modify:zoo		modify zoo	
+		add:bookings	add:bookings	
+		delete:bookings	delete:bookings	
+		view:bookings	view:bookings
 
 
-## Main Files: Project Structure
+- A rudimentary frontend has been included, but is mainly for testing purposes only.
 
-  ```sh
-  ├── README.md
-  ├── app.py *** the main driver of the app. Includes your SQLAlchemy models.
-                    "python app.py" to run after installing dependencies
-  ├── config.py *** Database URLs, CSRF generation, etc
-  ├── error.log
-  ├── forms.py *** Your forms
-  ├── requirements.txt *** The dependencies we need to install with "pip3 install -r requirements.txt"
-  ├── static
-  │   ├── css 
-  │   ├── font
-  │   ├── ico
-  │   ├── img
-  │   └── js
-  └── templates
-      ├── errors
-      ├── forms
-      ├── layouts
-      └── pages
-  ```
+## Getting Started
 
-Overall:
-* Models are located in the `MODELS` section of `app.py`.
-* Controllers are also located in `app.py`.
-* The web frontend is located in `templates/`, which builds static assets deployed to the web server at `static/`.
-* Web forms for creating data are located in `form.py`
+- Base URL: The application is hosted on Heroku at the URL of https://kongsisland.herokuapp.com and can be altered to run locally by amending commenting the block labelled database path and uncommenting the same block below. The backend app can then be run `http://127.0.0.1:5000/`
 
 
-Highlight folders:
-* `templates/pages` -- (Already complete.) Defines the pages that are rendered to the site. These templates render views based on data passed into the template’s view, in the controllers defined in `app.py`. These pages successfully represent the data to the user, and are already defined for you.
-* `templates/layouts` -- (Already complete.) Defines the layout that a page can be contained in to define footer and header code for a given page.
-* `templates/forms` -- (Already complete.) Defines the forms used to create new gorillas, shows, and venues.
-* `app.py` -- (Missing functionality.) Defines routes that match the user’s URL, and controllers which handle data and renders views to the user. This is the main file you will be working on to connect to and manipulate the database and render views with data to the user, based on the URL.
-* Models in `app.py` -- (Missing functionality.) Defines the data models that set up the database tables.
-* `config.py` -- (Missing functionality.) Stores configuration variables and instructions, separate from the main application code. This is where you will need to connect to the database.
+- Authentication: Authentication is required to use the app, non-authenticated users will be required to login.  Authentication is accessed via the frontend through Auth0.
+
+## Key Dependencies
+	
+	 - [PostgreSql] (https://www.postgresql.org/)  PostgreSQL is a powerful, open source object-relational database.
+	
+	 - [Flask](http://flask.pocoo.org/)  is a lightweight backend microservices framework. Flask is required to handle requests and responses.
+
+	 - [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use handle the lightweight sqlite database. You'll primarily work in app.py and can reference models.py. 
+
+	 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server. 
+	 
+	 - [POSTMAN] http://www.postman.com) whilst not required for this project, a POSTMAN JSON file is included for testing the authentication processes from Auth0. 
+
+### Installing Dependencies
 
 
-Instructions
------
+	1. **Python 3.7** - Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+	
+	2. **PostgreSql** - Follow instrctions to install the latest version of PostgreSql at https://www.postgresql.org/download/.
+	
+	3. **Virtual Environment** - We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organaized. Instructions for setting up a virtual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/). For Windows and Linux users, the process is as follows:
 
-1. Understand the Project Structure (explained above) and where important files are located.
-2. Build and run local development following the Development Setup steps below.
-3. Fill in the missing functionality in this application: this application currently pulls in fake data, and needs to now connect to a real database and talk to a real backend.
-3. Fill out every `TODO` section throughout the codebase. We suggest going in order of the following:
+		 **Windows users in Bash**
 
-  1. Connect to a database in `config.py`. A project submission that uses a local database connection is fine.
-  2. Using SQLAlchemy, set up normalized models for the objects we support in our web app in the Models section of `app.py`. Check out the sample pages provided at /gorillas/1, /venues/1, and /shows/1 for examples of the data we want to model, using all of the learned best practices in database schema design. Implement missing model properties and relationships using database migrations via Flask-Migrate.
-  3. Implement form submissions for creating new Venues, Gorillas, and Shows. There should be proper constraints, powering the `/create` endpoints that serve the create form templates, to avoid duplicate or nonsensical form submissions. Submitting a form should create proper new records in the database.
-  4. Implement the controllers for listing venues, gorillas, and shows. Note the structure of the mock data used. We want to keep the structure of the mock data.
-  5. Implement search, powering the `/search` endpoints that serve the application's search functionalities.
-  6. Serve venue and gorilla detail pages, powering the `<venue|gorilla>/<id>` endpoints that power the detail pages.
+		Ensure you're in the Backend folder in Bash and follow the following.
 
+		``` bash
+		Python -m venv venv
+		source venv/scripts/activate
+		```
+		
+		**Linux users in Bash**
+		
+		Ensure you're in the Backend folder in Bash and follow the following.
+		``` bash
+		Python -m venv venv
+		source venv/bin/activate	
+		```
+	4. **PIP Dependencies** - Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
+	
+	```bash
+	pip install -r requirements.txt
+	```
+	
+	This will install all of the required packages included within the `requirements.txt` file.
 
-Acceptance Criteria
------
+## Database Description
 
-1. The web app should be successfully connected to a PostgreSQL database. A local connection to a database on your local computer is fine.
-2. There should be no use of mock data throughout the app. The data structure of the mock data per controller should be kept unmodified when satisfied by real data.
-3. The application should behave just as before with mock data, but now uses real data from a real backend server, with real search functionality. For example:
-  * when a user submits a new gorilla record, the user should be able to see it populate in /gorillas, as well as search for the gorilla by name and have the search return results.
-  * I should be able to go to the URL `/gorilla/<gorilla-id>` to visit a particular gorilla’s page using a unique ID per gorilla, and see real data about that particular gorilla.
-  * Venues should continue to be displayed in groups by city and state.
-  * Search should be allowed to be partial string matching and case-insensitive.
-  * Past shows versus Upcoming shows should be distinguished in Venue and Gorilla pages.
-  * A user should be able to click on the venue for an upcoming show in the Gorilla's page, and on that Venue's page, see the same show in the Venue Page's upcoming shows section.
-4. As a fellow developer on this application, I should be able to run `flask db migrate`, and have my local database (once set up and created) be populated with the right tables to run this application and have it interact with my local postgres server, serving the application's needs completely with real data I can seed my local database with.
-  * The models should be completed (see TODOs in the `Models` section of `app.py`) and model the objects used throughout Fyyur.
-  * Define the models in a different file to follow [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) design principles. You can refactor the models to a new file, such as `models.py`.
-  * The right _type_ of relationship and parent-child dynamics between models should be accurately identified and fit the needs of this particular application.
-  * The relationship between the models should be accurately configured, and referential integrity amongst the models should be preserved.
-  * `flask db migrate` should work, and populate my local postgres database with properly configured tables for this application's objects, including proper columns, column data types, constraints, defaults, and relationships that completely satisfy the needs of this application. The proper type of relationship between venues, gorillas, and shows should be configured.
+	5.	The database is made up of three tables, Zoos - for the listing of individual Zoos, Gorillas - for the listing of individual gorillas and Bookings, a table with foreginkeys linked to relationship keys in Zoos and Gorillas.
 
-##### Stand Out
+## Local Database setup
+	 
+	6.	Start Postgres, in windows this is achieved by typing the following in a bash window:
+		
+		pg_ctl -d "C:\program files\postgresql\10\data" start  	substitute the number 10 for the version number of postgresql you have installed.
+		
+		Creating the database is an automated process.  Within the App.py application uncomment line 48 "db_drop_and_create_all() and a new local database will be created with some sample data. 
+		
+## Running the application
 
-Looking to go above and beyond? This is the right section for you! Here are some challenges to make your submission stand out:
+	7. To run the app online, simply access https://kongsisland.herokuapp.com and logging in.
+	
+	8. To run the programme locally:
 
-*  Implement gorilla availability. An gorilla can list available times that they can be booked. Restrict venues from being able to create shows with gorillas during a show time that is outside of their availability.
-* Show Recent Listed Gorillas and Recently Listed Venues on the homepage, returning results for Gorillas and Venues sorting by newly created. Limit to the 10 most recently listed items.
-* Implement Search Gorillas by City and State, and Search Venues by City and State. Searching by "San Francisco, CA" should return all gorillas or venues in San Francisco, CA.
+			Each time you open a new terminal session, run:
 
-Best of luck in your final project! Fyyur depends on you!
+			```bash
+			export FLASK_APP=app.py;
+			```
 
+			To run the server, execute:
 
-## Development Setup
-1. **Download the project starter code locally**
-```
-git clone https://github.com/udacity/FSND.git
-cd FSND/projects/01_fyyur/starter_code 
-```
+			```bash
+			pg_ctl -D "c:\program files\postgresql\10\data" start
+			flask run --reload
+			```
+			
+			The `--reload` flag will detect file changes and restart the server automatically.
+			
+	9. Open a web-browser and point it to http://localhost:5000
+	
+## Error handling
 
-2. **Create an empty repository in your Github account online. To change the remote repository path in your local repository, use the commands below:**
-```
-git remote -v 
-git remote remove origin 
-git remote add origin <https://github.com/<USERNAME>/<REPO_NAME>.git>
-git branch -M master
-```
-Once you have finished editing your code, you can push the local repository to your Github account using the following commands.
-```
-git add . --all   
-git commit -m "your comment"
-git push -u origin master
-```
+	10.	A number of error checking has been made available which are described below:
+			a.	A Postman collection JSON for testing authorisations on a local database has been made available, called konsisland.postman_collection.json.  Import this into Postman and run the tests.  The individual keys may have expired, in which case contact the author to supply renewed keys.
+			
+			b. A Unittest has been supplied and is configured to carry out tests, detailed in para XXX.  The Unittest, called kongsisland_unittest.py is currently configured to test the online version of the application.  To test locally, carry out the local installs as directed above and comment out lines 25-30 in the py file and uncomment lines 32-38.  This will ensure the test is aimed at the local machine.
 
-3. **Initialize and activate a virtualenv using:**
-```
-python -m virtualenv env
-source env/bin/activate
-```
->**Note** - In Windows, the `env` does not have a `bin` directory. Therefore, you'd use the analogous command shown below:
-```
-source env/Scripts/activate
-```
+	
 
-4. **Install the dependencies:**
-```
-pip install -r requirements.txt
-```
+	Errors will be returned in the following json format:
+	
+		```
+		json
+			  {
+			   'success': False,
+			   'error': 404,
+			   'message': 'Resource not found, we searched everywhere'
+			  }
+		```
+		
+	11.	The error codes currently returned are:
+	
+	* 400 - Bad Request Error
+	* 401 - Unauthorised
+	* 404 - Resource not Found Error
+	* 500 - Internal Server Error
+	* 422 - Unprocessable Error
+	* AuthError - handled by Auth.py to confirm if a user has correct permissions.
+	
+	12. Authentication processes were checked using Postman (https://www.postman.com) and through the used of the unittest mention in para 9b above.  The included postman and unittest test against the Endpoints listed below.
+	
+##	Endpoints
 
-5. **Run the development server:**
-```
-export FLASK_APP=myapp
-export FLASK_ENV=development # enables debug mode
-python3 app.py
-```
+	13.	The following endpoints are used within the App:
 
-6. **Verify on the Browser**<br>
-Navigate to project homepage [http://127.0.0.1:5000/](http://127.0.0.1:5000/) or [http://localhost:5000](http://localhost:5000) 
+	** GET / zoos
+	-	General:
+		Displays zoos to logged in users of type 'zookeeper', 'vet' and 'zoodirector'.
+	
+	** POST / zoos/search
+	-	General:
+		Allows for the searching of zoos and allowable by users of type 'zookeeper', 'vet' and 'zoodirector'.
+		
+	** GET /gorillas
+	-	General:
+		Lists gorillas and their future bookings to worldwide zoos.  Accessible by users of type 'zookeeper', 'vet' and 'zoodirector'.
+		
+	** POST /gorillas/search
+	-	General:
+		Allows for the searching of gorillas and allowable by users of type 'zookeeper', 'vet' and 'zoodirector'.
+		
+	** POST /zoos/create
+		General:
+		Allows for the posting of new zoos and allowable by users of type 'vet' and 'zoodirector'.
+		
+	** POST /gorillas/create
+		General:
+		Allows for the posting of new gorillas and allowable by users of type 'vet' and 'zoodirector'.
+		
+	** PATCH /zoos/<int:id>/edit
+		General:
+		Allows for the editing of zoos and allowable by users of type 'vet' and 'zoodirector'.	
+		
+	** PATCH /gorillas/<int:id>/edit
+		General:
+		Allows for the editing of gorillas and allowable by users of type 'vet' and 'zoodirector'.
+		
+	** DELETE /zoos/<int:id>/delete
+		General:
+		Allows for the deletion of zoos and allowable by users of type 'vet' and 'zoodirector'.
+	
+	** DELETE /gorillas/<int:id>/delete
+		General:
+		Allows for the deletion of zoos and allowable by users of type 'vet' and 'zoodirector'.
+		
+	** POST /bookings/create
+		General:
+		Allows for the posting of new bookings and allowable by users of type 'zoodirector'.
 
+	** POST /bookings/<int:id>delete
+		General:
+		Allows for the deleting of bookings and allowable by users of type 'zoodirector'.
+	
+	
+### Setup Auth0
+
+	14. Auth0 (https://auth0.com) is an external website that can provide for the management of users and permissions and was chosen as this Webapp's authentication method.  It has been set up using the following details:
+	```
+		AUTH0_DOMAIN = 'fsnd-tgrahame.eu.auth0.com'
+		ALGORITHMS = ['RS256']
+		API_AUDIENCE = 'kongsisland'
+	```
+## Authors
+	- 	The rudimentary front end was modified from a previous lesson created by Udacity.  With this exception the entire application was created by Tim Grahame

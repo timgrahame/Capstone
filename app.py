@@ -43,8 +43,11 @@ def create_app():
     db = SQLAlchemy(app)
     CORS(app)
 
+#  To reset database uncomment line below or use the button on the front page
+# db_drop_and_create_all()
+
     # ---------------------------------------------------------------------------#
-    # Uncheck comment below to create database with a few entries per table
+    # Button to reset database on main front page.
     # ---------------------------------------------------------------------------#
     @app.route('/reset_database', methods=['GET'])
     @cross_origin()
