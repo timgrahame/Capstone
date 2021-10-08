@@ -43,9 +43,15 @@ def create_app():
     db = SQLAlchemy(app)
     CORS(app)
 
+    # ---------------------------------------------------------------------------#
     # Uncheck comment below to create database with a few entries per table
-    #db_drop_and_create_all()
-
+    # ---------------------------------------------------------------------------#
+    @app.route('/reset_database', methods=['GET'])
+    @cross_origin()
+    def reset_database():
+        db_drop_and_create_all()
+        return render_template('pages/home.html')
+    
     @app.after_request
     def after_request(response):
         response.headers.add(
