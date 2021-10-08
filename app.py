@@ -45,7 +45,7 @@ def create_app():
     CORS(app)
 
     # Uncheck comment below to create database with a few entries per table
-    #db_drop_and_create_all()
+    db_drop_and_create_all()
 
     @app.after_request
     def after_request(response):
