@@ -10,12 +10,16 @@ from flask_migrate import Migrate
 
 load_dotenv()
 
-database_path = "postgresql://{}:{}@{}/{}".format(
-    env['DB_USER'],
-    env['DB_PASSWORD'],
-    env['DB_HOST'],
-    env['DB_NAME']
-    )
+database_path = 'postgres://ozgxqlvtznemxe:fe85babc7a4a83cbc65752171d5fda988ee5f6181d5519a568a24056a629853e@ec2-23-21-4-7.compute-1.amazonaws.com:5432/d6osfi0qp10auf'
+
+# Below is the local database path
+
+#database_path = "postgresql://{}:{}@{}/{}".format(
+#    env['DB_USER'],
+#    env['DB_PASSWORD'],
+#    env['DB_HOST'],
+#    env['DB_NAME']
+#    )
 
 db = SQLAlchemy()
 

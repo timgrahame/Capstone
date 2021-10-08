@@ -35,7 +35,6 @@ AUTH0_AUDIENCE = os.getenv('AUTH0_AUDIENCE')
 # App Config.
 # ///////////////////////////////////////////////////////////////////////////#
 
-
 def create_app():
     app = Flask(__name__)
     setup_db(app)
@@ -46,7 +45,7 @@ def create_app():
     CORS(app)
 
     # Uncheck comment below to create database with a few entries per table
-    db_drop_and_create_all()
+    #db_drop_and_create_all()
 
     @app.after_request
     def after_request(response):
@@ -903,8 +902,8 @@ def create_app():
         }), error.status_code
 
     return app
-    
+
 app = create_app()
+
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
