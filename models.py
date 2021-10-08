@@ -21,7 +21,7 @@ database_path = "postgres://{}:{}@{}/{}".format(
 
 # Below is the local database path
 
-#database_path = "postgresql://{}:{}@{}/{}".format(
+# database_path = "postgresql://{}:{}@{}/{}".format(
 #    env['DB_USER'],
 #    env['DB_PASSWORD'],
 #    env['DB_HOST'],
