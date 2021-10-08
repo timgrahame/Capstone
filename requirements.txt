@@ -65,5 +65,4 @@ virtualenv==20.4.6
 wcwidth==0.2.5
 Werkzeug==0.15.4
 wrapt==1.11.1
-WTFForms==2.3.3
 zipp==3.4.1
