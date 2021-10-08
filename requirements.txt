@@ -1,7 +1,6 @@
 astroid==2.2.5
 Click==7.0
 ecdsa==0.13.2
-Flask==1.0.2
 Flask-SQLAlchemy==2.4.0
 future==0.17.1
 isort==4.3.18
@@ -25,6 +24,8 @@ aniso8601==6.0.0
 Flask==1.0.3
 Flask-Cors==3.0.7
 Flask-RESTful==0.3.7
+Flask_migrate==1.12.0
+flask_script==2.0.6
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 psycopg2-binary==2.8.2
