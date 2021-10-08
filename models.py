@@ -12,7 +12,7 @@ load_dotenv()
 
 # Below is the Heroku path
 
-database_path = "postgres://{}:{}@{}/{}".format(
+database_path = "postgresql://{}:{}@{}/{}".format(
    env['HEROKU_USER'],
    env['HEROKU_PASSWORD'],
    env['HEROKU_HOST'],
