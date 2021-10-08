@@ -1,0 +1,71 @@
+{% extends 'layouts/main.html' %}
+{% block title %}{{ gorilla.name }} | Gorilla{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-6">
+		<h1 class="monospace">
+			{{ gorilla.name }}
+		</h1>
+		<p class="subtitle">
+			ID: {{ gorilla.id }}
+		</p>
+		<p>
+			<i class="fas fa-globe-americas"></i> {{ gorilla.city }}, {{ gorilla.state }}
+		</p>
+		<p>
+			<i class="fas fa-phone-alt"></i> {% if gorilla.phone %}{{ gorilla.phone }}{% else %}No Phone{% endif %}
+        </p>
+        <p>
+			<i class="fas fa-link"></i> {% if gorilla.website %}<a href="{{ gorilla.website }}" target="_blank">{{ gorilla.website }}</a>{% else %}No Website{% endif %}
+		</p>
+		<p>
+			<i class="fab fa-facebook-f"></i> {% if gorilla.facebook_link %}<a href="{{ gorilla.facebook_link }}" target="_blank">{{ gorilla.facebook_link }}</a>{% else %}No Facebook Link{% endif %}
+        </p>
+		{% if gorilla.seeking_zoo %}
+		<div class="seeking">
+			<p class="lead">Currently available for the captive breeding programme</p>
+			<div class="description">
+				<i class="fas fa-quote-left"></i> {{ gorilla.seeking_description }} <i class="fas fa-quote-right"></i>
+			</div>
+		</div>
+		{% else %}	
+		<p class="not-seeking">
+			<i class="fas fa-moon"></i> Not Currently available for the captive breeding programme
+		</p>
+		{% endif %}
+	</div>
+	<div class="col-sm-6">
+		<img src="{{ gorilla.image_link }}" alt="Gorilla Image" />
+	</div>
+</div>
+<section>
+	<h2 class="monospace">{{ gorilla.upcoming_bookings_count }} Upcoming {% if gorilla.upcoming_bookings_count == 1 %}Booking{% else %}Bookings{% endif %}</h2>
+	<div class="row">
+		{%for booking in gorilla.upcoming_bookings %}
+		<div class="col-sm-4">
+			<div class="tile tile-booking">
+				<h5><a href="/zoos/{{ booking.zoo_id }}">{{ booking.zoo_name }}</a></h5>
+				<h6>{{ booking.start_time|datetime('full') }}</h6>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+<section>
+	<h2 class="monospace">{{ gorilla.past_bookings_count }} Past {% if gorilla.past_bookings_count == 1 %}Booking{% else %}Bookings{% endif %}</h2>
+	<div class="row">
+		{%for booking in gorilla.past_bookings %}
+		<div class="col-sm-4">
+			<div class="tile tile-booking">
+				<h5><a href="/zoos/{{ booking.zoo_id }}">{{ booking.zoo_name }}</a></h5>
+				<h6>{{ booking.start_time|datetime('full') }}</h6>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<a href="/gorillas/{{ gorilla.id }}/edit"><button class="btn btn-success btn-lg">Edit</button></a>
+
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'layouts/main.html' %}
+{% block title %}KongIsland | Gorillas{% endblock %}
+{% block content %}
+<ul class="items">
+	{% for gorilla in gorillas %}
+	<li>
+		<a href="/gorillas/{{ gorilla.id }}">
+			<i class="fas fa-users"></i>
+			<div class="item">
+				<h5>{{ gorilla.name }}</h5>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

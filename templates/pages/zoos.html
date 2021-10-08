@@ -1,0 +1,16 @@
+{% extends 'layouts/main.html' %}
+{% block title %}KongIsland | Zoos{% endblock %}
+{% block content %}
+	<ul class="items">
+		{% for zoo in zoos %}
+		<li>
+			<a href="/zoos/{{ zoo.id }}">
+				<i class="fa fa-plane" aria-hidden="true"></i>
+				<div class="item">
+					<h5>{{ zoo.name }}</h5>
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

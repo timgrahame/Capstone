@@ -1,0 +1,17 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Kong Island | Bookings{% endblock %}
+{% block content %}
+<div class="row bookings">
+    {%for booking in bookings %}
+    <div class="col-sm-4">
+        <div class="tile tile-booking">
+            <img src="{{ booking.gorilla_image_link }}" alt="Gorilla Image" />
+            <h4>{{ booking.start_time|datetime('full') }}</h4>
+            <h5><a href="/gorillas/{{ booking.gorilla_id }}">{{ booking.gorilla_name }}</a></h5>
+            <p>Is going to</p>
+            <h5><a href="/zoos/{{ booking.zoo_id }}">{{ booking.zoo_name }}</a></h5>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

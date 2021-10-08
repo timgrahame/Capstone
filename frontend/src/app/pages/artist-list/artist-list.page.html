@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar style="text-align: center">
+    <ion-title><b>Star</b> Finder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="artists && artists.items">
+<div style="display: flex; justify-content: center; padding-top: 20px;">
+    <ion-card
+     style="align-items: center; display: flex; flex-direction: column; cursor: pointer;" 
+     *ngFor="let artist of Object.keys(artist.items)"
+     (click)="openForm(artists.items[artist])">
+        <ion-card-header>
+          <ion-card-title>{{artist.items[artist].title}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <app-artist-graphic [artist]="artist.items[artist]"></app-artist-graphic>
+        </ion-card-content>
+      </ion-card>
+    <ion-card
+     style="opacity: .7; align-items: center; display: flex; flex-direction: column; cursor: pointer;" 
+     *ngIf="auth.can('post:artist')"
+     (click)="openForm()">
+        <ion-card-header>
+          <ion-card-title>Create Artist</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content style="color:grey; font-size: 256%;">
+            <ion-icon name="add-circle"></ion-icon>
+        </ion-card-content>
+      </ion-card>
+</div>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="isNew">New artist Creator</ion-title>
+    <ion-title *ngIf="!isNew">artist Editor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="artist">
+    <app-artist-graphic [artist]="artist"></app-artist-graphic>
+
+    <form (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>artist Title</ion-label>
+        <ion-input type="text" [(ngModel)]="artist.title" name="title"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let ingredient of artist.recipe; let i = index;  trackBy: customTrackBy">
+        <ion-label>Ingredient Name</ion-label>
+        <ion-input [(ngModel)]="artist.recipe[i].name" [name]="'Ingredient Title'+i"></ion-input>
+
+        <ion-label>Number of Parts</ion-label>
+        <ion-input type="number" [(ngModel)]="artist.recipe[i].parts" [name]="'Ingredient Parts'+i"></ion-input>
+
+        <ion-label>Color</ion-label>
+        <ion-input type="text" [(ngModel)]="artist.recipe[i].color" [name]="'Ingredient Color'+i"></ion-input>
+
+        <ion-button (click)="removeIngredient(i)" [disabled]="i==0 && artist.recipe.length==1">Remove</ion-button><br />
+        <ion-button (click)="addIngredient(i)" [disabled]="artist.recipe.length==5">ADD</ion-button><br />
+
+      </ion-item>
+
+      <ion-button 
+        [disabled]="!auth.can('delete:artists')"
+        (click)="deleteClicked()">Delete</ion-button><br />
+      <ion-button (click)="closeModal()">Cancel</ion-button>
+      <ion-button 
+        [disabled]="!auth.can('patch:artists') || !auth.can('post:artists')"
+        (click)="saveClicked()">Save</ion-button>
+
+    </form>
+</ion-content>

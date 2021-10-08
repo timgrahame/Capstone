@@ -1,0 +1,1682 @@
+{
+	"info": {
+		"_postman_id": "083dca25-2c67-4fd9-8cb9-8b28a6f9d9ae",
+		"name": "kongsisland",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JoePublic",
+			"item": [
+				{
+					"name": "/zoos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Berlins Zoo\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"address\" :\"Zoologischer Garten Berlin AG Hardenbergplatz 8 10787 Berlin\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_animal\" : 1, \"seeking_description\" : \"It has been too successful\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/1/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/1/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/1/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/1/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/1/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/1/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/1/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since credentials are missing\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/1/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "zookeeper",
+			"item": [
+				{
+					"name": "/zoos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"search_term\" :\"Berlin Zoo\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"search_term\" :\"George\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/gorillas/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are invalid\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Berlins Zoo\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"address\" :\"Zoologischer Garten Berlin AG Hardenbergplatz 8 10787 Berlin\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_animal\" : 1, \"seeking_description\" : \"It has been too successful\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are invalid\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/1/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are invalid\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/1/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/1/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are invalid\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/1/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/1/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are invalid\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/1/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/1/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are invalid\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/1/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2IyZWRjZDUxMDA3MGU1MmFlNyIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNjcxMjIxLCJleHAiOjE2MzM3NTc2MjEsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbInZpZXc6Ym9va2luZ3MiLCJ2aWV3OmdvcmlsbGFzIiwidmlldzp6b29zIl19.Jwncwa3MgEe-mV02xS8MqhEoKboj80iqCFfvU5VUrBcu8qRcar7zSlzGpmmovqDyOa2zBWPMqnZH0LyUP0ZO-U1UgX8rVCVLl0pDqjbMb2438Py7pNc-6BdxG0ehYUzZ3wjLZVTx3yxlLgArB7NGB20_QesZkSyG2JLAYMvu7qMVDZaXV2ES30LNljPCC-yjbiOuPbglkLXPuHSAXpxYxWiHflJ2tfAChoS1NbsJhO24Blfx6-UptDPvGZN51Qn8dOJkPxFRPp7388inPSl8NT-ra2Yo8ikQc2UeUWs4Ad3ao1I9nQ0J8Vu1iIH4D8AIV3NwGTPz8EeWENewWuqKsg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "vet",
+			"item": [
+				{
+					"name": "/zoos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"search_term\" :\"Berlin Zoo\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Berlins Zoo\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"address\" :\"Zoologischer Garten Berlin AG Hardenbergplatz 8 10787 Berlin\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_animal\" : 1, \"seeking_description\" : \"It has been too successful\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorilla/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Gorgeous George\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_zoo\" : 1, \"seeking_description\" : \"George is ready for his next posting\",\"image_link\":\"https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/05/30/20/dublinzoo.jpg\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/gorillas/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoo/2/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Berlin Zoo\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"address\" :\"Zoologischer Garten Berlin AG Hardenbergplatz 8 10787 Berlin\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_animal\" : 1, \"seeking_description\" : \"It has been too successful\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/1/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/2/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Gorgeous George III\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_zoo\" : 1, \"seeking_description\" : \"George is ready for his next posting\",\"image_link\":\"https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/05/30/20/dublinzoo.jpg\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/gorillas/2/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"2",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/2/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/2/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"2",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/2/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/2/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"2",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2U0YjQyNDY4MDA2OWZkMWZjMSIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNjcxMTgzLCJleHAiOjE2MzM3NTc1ODMsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImFkZDpnb3JpbGxhcyIsImFkZDp6b29zIiwiZGVsZXRlOmdvcmlsbGFzIiwiZGVsZXRlOnpvb3MiLCJtb2RpZnk6Z29yaWxsYSIsIm1vZGlmeTp6b28iLCJ2aWV3OmJvb2tpbmdzIiwidmlldzpnb3JpbGxhcyIsInZpZXc6em9vcyJdfQ.CLy72dFy3rwb-tIxPKTCwDAGg20ccnMXVaLLhAJtLmaYlGa-75iMra0brHztK-Zs1k8cOby-I-CMw-ULrskkI1L1Ajf_-qyUhkN9hJcQZ2tYXzpFsFfsSAhjMttalP4WJAlJB8CkvokI04fHZErz97fsSJDu5ukXHzQC_vvDeK-x0racoCjG6pOGUEiaB-SB4f6pUS11v8AekTEy62O5SAqOldBv_IENUtOnLbGjtVBTlbaGPb_45GYxogz-AaJU4h_qg04-XSk130vNzls_mxBLC-oBC22fhwLaPdqdk9elvf9-Dkydu9a3KpkGzDMBSVgUNA6l-_ZOpIOos7FH5g",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "zoodirector",
+			"item": [
+				{
+					"name": "/zoos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Berlins Zoo\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"address\" :\"Zoologischer Garten Berlin AG Hardenbergplatz 8 10787 Berlin\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_animal\" : 1, \"seeking_description\" : \"It has been too successful\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorilla/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Gorgeous George\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_zoo\" : 1, \"seeking_description\" : \"George is ready for his next posting\",\"image_link\":\"https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/05/30/20/dublinzoo.jpg\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/gorillas/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoo/2/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Berlin Zoo\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"address\" :\"Zoologischer Garten Berlin AG Hardenbergplatz 8 10787 Berlin\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_animal\" : 1, \"seeking_description\" : \"It has been too successful\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/zoos/3/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"3",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/2/edit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" :\"Gorgeous George III\",\"city\" :\"Berlin\",\"country\" :\"DE\",\"phone\" :\"+49 30 254011\",\"website_link\" : \"https://www.zoo-berlin.de/en\",\"seeking_zoo\" : 1, \"seeking_description\" : \"George is ready for his next posting\",\"image_link\":\"https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/05/30/20/dublinzoo.jpg\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/gorillas/3/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"3",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/zoos/3/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/zoos/3/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"zoos",
+								"3",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/gorillas/3/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/gorillas/3/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"gorillas",
+								"3",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"gorilla_id\" :1,\"zoo_id\" :1,\"start_time\" :\"2024-01-01 12:00:00\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/bookings/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bookings",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings/2/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/bookings/2/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bookings",
+								"2",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2ZhZWRjZDUxMDA3MGU1MmIxNyIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNjcxMDc2LCJleHAiOjE2MzM3NTc0NzYsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImFkZDpib29raW5ncyIsImFkZDpnb3JpbGxhcyIsImFkZDp6b29zIiwiZGVsZXRlOmJvb2tpbmdzIiwiZGVsZXRlOmdvcmlsbGFzIiwiZGVsZXRlOnpvb3MiLCJtb2RpZnk6Z29yaWxsYSIsIm1vZGlmeTp6b28iLCJ2aWV3OmJvb2tpbmdzIiwidmlldzpnb3JpbGxhcyIsInZpZXc6em9vcyJdfQ.CpfqBNWA5073V3tU01MVe58S_-ZDY_11rciMSvASKZVZn031Y6sQxHxxiOMS3BGkoXBPBgh-n2hRw69Y4Miq4QUfDjwNN0hZ-05cwsMEVAADQrTgwdOQoZz5xg2iyVCxFhlBLLrWnMxVbll1L8uFT2AKI35emnrftAOkUaYWUtKaQIyAQlaEKEHjVQhLhsRYYN1o7f1_ihZLRA-4QSY4D-JFrn2s-1ELNS-buxPlSiCfBgfE1z9Y6qWGK3FcGBmfeJSLGTNDeApm_ijkkWbv8JueKv0nCPlQwjvMW2CXoKjRv0wTZVS43zeAr7L3GWPqfBf_DNPYlHNS3FGCvI_Tzw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}

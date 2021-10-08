@@ -1,0 +1,72 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Venue Search{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-6">
+		<h1 class="monospace">
+			{{ zoos.name }}
+		</h1>
+		<p class="subtitle">
+			ID: {{ zoos.id }}
+		</p>
+
+		<p>
+			<i class="fas fa-globe-americas"></i> {{ zoos.city }}, {{ zoos.state }}
+		</p>
+		<p>
+			<i class="fas fa-map-marker"></i> {% if zoos.address %}{{ zoos.address }}{% else %}No Address{% endif %}
+		</p>
+		<p>
+			<i class="fas fa-phone-alt"></i> {% if zoos.phone %}{{ zoos.phone }}{% else %}No Phone{% endif %}
+		</p>
+		<p>
+			<i class="fas fa-link"></i> {% if zoos.website %}<a href="{{ zoos.website }}" target="_blank">{{ zoos.website }}</a>{% else %}No Website{% endif %}
+		</p>
+		{% if zoos.seeking_talent %}
+		<div class="seeking">
+			<p class="lead">Currently seeking animal</p>
+			<div class="description">
+				<i class="fas fa-quote-left"></i> {{ zoos.seeking_description }} <i class="fas fa-quote-right"></i>
+			</div>
+		</div>
+		{% else %}	
+		<p class="not-seeking">
+			<i class="fas fa-moon"></i> Not currently seeking talent
+		</p>
+		{% endif %}
+	</div>
+</div>
+<section>
+	<h2 class="monospace">{{ zoos.upcoming_bookings_count }} Upcoming {% if zoos.upcoming_bookings_count == 1 %}Booking{% else %}Bookings{% endif %}</h2>
+	<div class="row">
+		{%for booking in zoos.upcoming_bookings %}
+		<div class="col-sm-4">
+			<div class="tile tile-booking">
+				<img src="{{ booking.gorilla_image_link }}" alt="Booking Gorilla Image" />
+				<h5><a href="/gorillas/{{ booking.gorilla_id }}">{{ booking.gorilla_name }}</a></h5>
+				<h6>{{ booking.start_time|datetime('full') }}</h6>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+<section>
+	<h2 class="monospace">{{ zoos.past_bookings_count }} Past {% if zoos.past_bookings_count == 1 %}Booking{% else %}Bookings{% endif %}</h2>
+	<div class="row">
+		{%for booking in zoos.past_boookings %}
+		<div class="col-sm-4">
+			<div class="tile tile-booking">
+				<img src="{{ oldbooking.gorilla_image_link }}" alt="Booking Gorilla Image" />
+				<h5><a href="/gorillas/{{ oldbooking.gorilla_id }}">{{ oldbooking.gorilla_name }}</a></h5>
+				<h6>{{ oldbooking.start_time|datetime('full') }}</h6>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<a href="/zoos/{{ zoos.id }}/edit"><button class="btn btn-success btn-lg">Edit</button></a>
+<a href="/zoos/{{ zoos.id }}/delete"><button class="btn btn-success btn-lg">Delete</button></a>
+
+{% endblock %}
+
