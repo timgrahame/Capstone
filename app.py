@@ -41,7 +41,6 @@ def create_app():
     moment = Moment(app)
     app.config.from_object('config')
     db = SQLAlchemy(app)
-    migrate = Migrate(app, db)
     CORS(app)
 
     # Uncheck comment below to create database with a few entries per table
