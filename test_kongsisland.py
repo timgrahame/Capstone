@@ -132,49 +132,49 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa2_zoos_page_fail(self):
         res = self.client().get('/zoos/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa3_gorillas_fail(self):
         res = self.client().get('/gorillas')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa4_gorillas_page_fail(self):
         res = self.client().get('/gorillas/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa5_zoos_create_fail(self):
         res = self.client().post('/newzoos', json=self.test_zoo_add)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa6_zoos_amend_fail(self):
         res = self.client().patch('/zoos/1', json=self.test_zoo_chg)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa7_zoos_delete_fail(self):
         res = self.client().delete('/zoos/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa8_gorillas_create_fail(self):
         res = self.client().post('/newgorillas',
@@ -182,7 +182,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testa9_gorillas_amend_fail(self):
         res = self.client().patch('/gorillas/1',
@@ -190,14 +190,14 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testb1_gorillas_delete_fail(self):
         res = self.client().delete('/gorillas/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testb2_bookings_create_fail(self):
         res = self.client().post('/newbookings',
@@ -205,14 +205,14 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     def testb3_bookings_create_fail(self):
         res = self.client().delete('/bookings/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'Unable to find the appropriate key')
+        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
 
     # ////////////////////////////////////////////////////////////////////////#
     # Test Zoo Keeper User
@@ -248,7 +248,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def testb9_zookeeper_zoos_amend_fail(self):
         res = self.client().patch('/zoos/1', json=self.test_zoo_chg,
@@ -256,7 +256,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def testc1_zookeeper_zoos_delete_fail(self):
         res = self.client().delete('/zoos/1',
@@ -264,7 +264,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def testc2_zookeeper_gorillas_create_fail(self):
         res = self.client().post('/newgorillas',
@@ -273,7 +273,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def testc3_zookeeper_gorillas_amend_fail(self):
         res = self.client().patch('/gorillas/1',
@@ -282,7 +282,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def testc4_zookeeper_gorillas_delete_fail(self):
         res = self.client().delete('/gorillas/1',
@@ -290,7 +290,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def testc5_zookeeper_bookings_create_fail(self):
         res = self.client().post('/newbookings',
@@ -299,7 +299,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def testc6_zookeeper_bookings_create_fail(self):
         res = self.client().delete('/bookings/1',
@@ -307,7 +307,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     # ////////////////////////////////////////////////////////////////////////#
     # Test Vet User
@@ -390,7 +390,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     def teste1_bookings_create_vet_fail(self):
         res = self.client().delete('/bookings/1',
@@ -398,7 +398,7 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You are not Authorized to do this')
+        self.assertEqual(data['message'], 'You are not authorized')
 
     # ////////////////////////////////////////////////////////////////////////#
     # Test Zoo Director User

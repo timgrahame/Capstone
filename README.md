@@ -6,7 +6,7 @@ The application allows three levels of a user with different permissions for eac
 
 	1. 	A zookeeper - Can only zoos and gorillas. 
 	2.	A vet - Can do everything a Zookeeper can do, can add zoos and gorillas, can modify zoos and gorillas, can delete zoos and gorillas, can view bookings.
-	3. 	A Zoo Director - Can do everything a vet can do plus also add and delete bookings.
+	3. 	A Zoo Director - Can do everything a vet can do plus also add and delete bookings and can also reset the database.
 	
 	
 The application uses Auth0 to manage the authenticated users and has the following permissions set:
@@ -76,7 +76,7 @@ The application uses Auth0 to manage the authenticated users and has the followi
 	pip install -r requirements.txt
 	```
 	
-	This will install all of the required packages included within the `requirements.txt` file.
+	This will install all of the required packages included within the `requirements.txt` file. Alternatively, running ./setup.sh should install all dependencies.
 
 ## Database Description
 
@@ -88,11 +88,17 @@ The application uses Auth0 to manage the authenticated users and has the followi
 		
 		pg_ctl -d "C:\program files\postgresql\10\data" start  	substitute the number 10 for the version number of postgresql you have installed.
 		
-		Creating the database is an automated process.  Within the App.py application uncomment line 48 "db_drop_and_create_all() and a new local database will be created with some sample data. 
+		To create the database type 
+		
+		```
+		createdb kongsisland
+		```
+				
+		Once the database is created, the tables can be created with example data, either by uncommenting line 49 in the app.py file or by loading the front end and clicking the reset database button - NOTE: You will need to be logged in with ZooDirector privileges to reset the database.
 		
 ## Running the application
 
-	7. To run the app online, simply access https://kongsisland.herokuapp.com and logging in.
+	7. To run the app online, simply access https://kongsisland.herokuapp.com and log in.
 	
 	8. To run the programme locally:
 
@@ -137,6 +143,7 @@ The application uses Auth0 to manage the authenticated users and has the followi
 	
 	* 400 - Bad Request Error
 	* 401 - Unauthorised
+	* 403 - Unable to find the appropriate key
 	* 404 - Resource not Found Error
 	* 500 - Internal Server Error
 	* 422 - Unprocessable Error
@@ -152,7 +159,7 @@ The application uses Auth0 to manage the authenticated users and has the followi
 	-	General:
 		Displays zoos to logged in users of type 'zookeeper', 'vet' and 'zoodirector'.
 	
-	** POST / zoos/search
+	** POST / zoos
 	-	General:
 		Allows for the searching of zoos and allowable by users of type 'zookeeper', 'vet' and 'zoodirector'.
 		
@@ -160,39 +167,39 @@ The application uses Auth0 to manage the authenticated users and has the followi
 	-	General:
 		Lists gorillas and their future bookings to worldwide zoos.  Accessible by users of type 'zookeeper', 'vet' and 'zoodirector'.
 		
-	** POST /gorillas/search
+	** POST /gorillas
 	-	General:
 		Allows for the searching of gorillas and allowable by users of type 'zookeeper', 'vet' and 'zoodirector'.
 		
-	** POST /zoos/create
+	** POST /newzoos
 		General:
 		Allows for the posting of new zoos and allowable by users of type 'vet' and 'zoodirector'.
 		
-	** POST /gorillas/create
+	** POST /newgorillas
 		General:
 		Allows for the posting of new gorillas and allowable by users of type 'vet' and 'zoodirector'.
 		
-	** PATCH /zoos/<int:id>/edit
+	** PATCH /zoos/<int:id>
 		General:
 		Allows for the editing of zoos and allowable by users of type 'vet' and 'zoodirector'.	
 		
-	** PATCH /gorillas/<int:id>/edit
+	** PATCH /gorillas/<int:id>
 		General:
 		Allows for the editing of gorillas and allowable by users of type 'vet' and 'zoodirector'.
 		
-	** DELETE /zoos/<int:id>/delete
+	** DELETE /zoos/<int:id>
 		General:
 		Allows for the deletion of zoos and allowable by users of type 'vet' and 'zoodirector'.
 	
-	** DELETE /gorillas/<int:id>/delete
+	** DELETE /gorillas/<int:id>
 		General:
 		Allows for the deletion of zoos and allowable by users of type 'vet' and 'zoodirector'.
 		
-	** POST /bookings/create
+	** POST /newbookings
 		General:
 		Allows for the posting of new bookings and allowable by users of type 'zoodirector'.
 
-	** POST /bookings/<int:id>delete
+	** POST /bookings/<int:id>
 		General:
 		Allows for the deleting of bookings and allowable by users of type 'zoodirector'.
 	

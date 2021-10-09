@@ -33,10 +33,10 @@ def get_token_auth_header():
     if auth is None:
         raise AuthError({
                 'code': 'invalid_header',
-                'description': 'Unable to find the appropriate key'
+                'description': 'You need to be logged in to view this page.'
                 }, 401)
 
-    bearer_token = auth.split()  # split the token.
+    bearer_token = auth.split()
 
     if bearer_token[0].lower() != 'bearer':
         raise AuthError({
@@ -69,7 +69,7 @@ def check_permissions(permission, payload):
     if permission not in payload['permissions']:
         raise AuthError({
             'code': 'Unauthorized',
-            'description': 'You are not Authorized to do this'
+            'description': 'You are not authorized'
         }, 403)
     return True
 
@@ -119,7 +119,7 @@ def verify_decode_jwt(token):
             raise AuthError({
                 'code': 'invalid_claims',
                 'description':
-                    'Incorrect claims. Please, check the audience and issuer.'
+                    'You need to be logged in to view this page.'
             }, 401)
 
         except Exception:

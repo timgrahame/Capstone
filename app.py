@@ -32,6 +32,7 @@ AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
 AUTH0_BASE_URL = os.getenv('AUTH0_BASE_URL')
 AUTH0_AUDIENCE = os.getenv('AUTH0_AUDIENCE')
 SECRET_KEY = os.getenv('SECRET_KEY')
+AUTHORIZE_URL = os.getenv('AUTHORIZE_URL')
 
 # ///////////////////////////////////////////////////////////////////////////#
 # App Config.
@@ -46,7 +47,7 @@ def create_app():
     CORS(app)
 
 #  To reset database uncomment line below or use the button on the front page
-# db_drop_and_create_all()
+    #db_drop_and_create_all()
 
     # ---------------------------------------------------------------------------#
     # Button to reset database on main front page.
@@ -92,8 +93,8 @@ def create_app():
         client_id=AUTH0_CLIENT_ID,
         client_secret=AUTH0_CLIENT_SECRET,
         api_base_url=AUTH0_BASE_URL,
-        access_token_url='https://fsnd-tgrahame.eu.auth0.com' + '/oauth/token',
-        authorize_url='https://fsnd-tgrahame.eu.auth0.com' + '/authorize',
+        access_token_url=AUTHORIZE_URL + '/oauth/token',
+        authorize_url=AUTHORIZE_URL + '/authorize',
         client_kwargs={
             'scope': 'openid profile email'
                 }
@@ -113,13 +114,15 @@ def create_app():
     def login():
         print('Audience: {}'.format(AUTH0_AUDIENCE))
 
-        # ----Below commented text is for local testing and ensures callback
-        # ----is to local rather than Heroku -----
-        # ---------------------------------------------------------------------
+        # ------local connections-------
+
         # return auth0.authorize_redirect(
         #   redirect_uri='%s/post-login' % AUTH0_LOCALCALLBACK_URL,
         #   audience=AUTH0_AUDIENCE
         # )
+
+        # ------heroklu connections-------
+
         return auth0.authorize_redirect(
           redirect_uri='%s/post-login' % AUTH0_CALLBACK_URL,
           audience=AUTH0_AUDIENCE
@@ -898,12 +901,21 @@ def create_app():
             "message": "You need to be logged in to view this page"
         }), 400
 
+    @app.errorhandler(403)
+    def unprocessable(error):
+        return jsonify({
+            "success": False,
+            "error": 403,
+            'code': 'invalid_header',
+            'description': 'Unable to find the appropriate key.'
+        }, 403)
+
     @app.errorhandler(404)
     def unprocessable(error):
         return jsonify({
             "success": False,
             "error": 404,
-            "message": "Not Found"
+            "message": "Resource not Found"
         }), 404
 
     # ---------------------------------------------------------------------------#
