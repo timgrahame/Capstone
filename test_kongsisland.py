@@ -22,6 +22,8 @@ class KongsislandsTestCase(unittest.TestCase):
         self.app = create_app()
         self.client = self.app.test_client
 
+        # Uncomment below to test online
+
         # self.database_path = "postgresql://{}:{}@{}/{}".format(
         #                 env['HEROKU_USER'],
         #                 env['HEROKU_PASSWORD'],
@@ -29,6 +31,8 @@ class KongsislandsTestCase(unittest.TestCase):
         #                 env['HEROKU_NAME']
         #                 )
 
+        #Uncomment below to test local
+        
         self.database_name = "kongsisland"
         self.database_path = "postgresql://{}:{}@{}/{}".format(
                             env['DB_USER'],

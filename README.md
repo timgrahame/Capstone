@@ -47,7 +47,6 @@ The application uses Auth0 to manage the authenticated users and has the followi
 
 ### Installing Dependencies
 
-
 	1. **Python 3.7** - Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 	
 	2. **PostgreSql** - Follow instrctions to install the latest version of PostgreSql at https://www.postgresql.org/download/.
@@ -70,7 +69,7 @@ The application uses Auth0 to manage the authenticated users and has the followi
 		Python -m venv venv
 		source venv/bin/activate	
 		```
-	4. **PIP Dependencies** - Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
+	4. **PIP Dependencies** - Once you have your virtual environment setup and running, install dependencies by running:
 	
 	```bash
 	pip install -r requirements.txt
@@ -78,13 +77,58 @@ The application uses Auth0 to manage the authenticated users and has the followi
 	
 	This will install all of the required packages included within the `requirements.txt` file. Alternatively, running ./setup.sh should install all dependencies.
 
+## Online vs Local
+
+	5.  The application is designed to run locally or online.  To switch configurations, you will need to uncomment and comment the following sections:
+	
+		app.py:				Lines 119 - 129
+		models.py: 			Lines 15 - 29
+		test.kongsisland:	Lines 27 - 42
+		
+		The version currently deployed on Heroku is set as an online version.  The version on Github is the local version.
+
 ## Database Description
 
-	5.	The database is made up of three tables, Zoos - for the listing of individual Zoos, Gorillas - for the listing of individual gorillas and Bookings, a table with foreginkeys linked to relationship keys in Zoos and Gorillas.
+	6.	The database is made up of three tables and the schema is described below:
+			
+			The Zoos Table - for the listing of individual Zoos
+				Incorporates the following columns:
+				```
+				        name 
+						city 
+						country
+						address
+						phone
+						website_link
+						seeking_animal
+						seeking_description
+						bookings # a relationship to Bookings.zoo_id
+				```
+			The Gorillas - for the listing of individual gorillas
+				Incorporates the following columns:
+				```
+						name
+						city
+						countr
+						phone
+						image_link
+						website
+						facebook_link
+						seeking_zoo
+						seeking_description		
+						bookings # a relationship to Bookings.gorilla_id
+				```
+			Bookings, a table with foreignkeys linked to relationship keys in Zoos and Gorillas.
+				Incorporates the following columns:
+				```
+						zoo_id	# a foreignkey linked to Zoo.bookings
+						gorilla_id # a foreignkey linked to Gorilla.bookings
+						start_time
+				```
 
 ## Local Database setup
 	 
-	6.	Start Postgres, in windows this is achieved by typing the following in a bash window:
+	7.	Start Postgres, in windows this is achieved by typing the following in a bash window:
 		
 		pg_ctl -d "C:\program files\postgresql\10\data" start  	substitute the number 10 for the version number of postgresql you have installed.
 		
@@ -94,13 +138,13 @@ The application uses Auth0 to manage the authenticated users and has the followi
 		createdb kongsisland
 		```
 				
-		Once the database is created, the tables can be created with example data, either by uncommenting line 49 in the app.py file or by loading the front end and clicking the reset database button - NOTE: You will need to be logged in with ZooDirector privileges to reset the database.
+		Once the database is created, the tables can be created with example data, either by uncommenting line 49 in the app.py file or by loading the front end and clicking the reset database button 
 		
 ## Running the application
 
-	7. To run the app online, simply access https://kongsisland.herokuapp.com and log in.
+	8. To run the app online, simply access https://kongsisland.herokuapp.com and log in.  The front end is a rudimentary web interface to make it easier to test.
 	
-	8. To run the programme locally:
+	9. To run the programme locally:
 
 			Each time you open a new terminal session, run:
 
@@ -117,29 +161,16 @@ The application uses Auth0 to manage the authenticated users and has the followi
 			
 			The `--reload` flag will detect file changes and restart the server automatically.
 			
-	9. Open a web-browser and point it to http://localhost:5000
+	10. Open a web-browser and point it to http://localhost:5000
 	
 ## Error handling
 
-	10.	A number of error checking has been made available which are described below:
+	11.	A number of error checking has been made available which are described below:
 			a.	A Postman collection JSON for testing authorisations on a local database has been made available, called konsisland.postman_collection.json.  Import this into Postman and run the tests.  The individual keys may have expired, in which case contact the author to supply renewed keys.
 			
-			b. A Unittest has been supplied and is configured to carry out tests, detailed in para XXX.  The Unittest, called kongsisland_unittest.py is currently configured to test the online version of the application.  To test locally, carry out the local installs as directed above and comment out lines 25-30 in the py file and uncomment lines 32-38.  This will ensure the test is aimed at the local machine.
-
+			b. A Unittest has been supplied and is configured to carry out tests against each of the Endpoints listed below.  The Unittest, called test_kongsisland.py can be configured to test the online and local versions by commenting out and commenting the relevant sections highlight. 
 	
-
-	Errors will be returned in the following json format:
-	
-		```
-		json
-			  {
-			   'success': False,
-			   'error': 404,
-			   'message': 'Resource not found, we searched everywhere'
-			  }
-		```
-		
-	11.	The error codes currently returned are:
+	12.	The error codes currently returned are:
 	
 	* 400 - Bad Request Error
 	* 401 - Unauthorised
@@ -149,11 +180,11 @@ The application uses Auth0 to manage the authenticated users and has the followi
 	* 422 - Unprocessable Error
 	* AuthError - handled by Auth.py to confirm if a user has correct permissions.
 	
-	12. Authentication processes were checked using Postman (https://www.postman.com) and through the used of the unittest mention in para 9b above.  The included postman and unittest test against the Endpoints listed below.
+	13. Authentication processes were checked using Postman (https://www.postman.com) and through the use of the unittest mention in para 9b above.  The included postman and unittest test against the Endpoints listed below for failures and successes and for each example user type.
 	
 ##	Endpoints
 
-	13.	The following endpoints are used within the App:
+	14.	The following endpoints are used within the App:
 
 	** GET / zoos
 	-	General:
@@ -206,7 +237,7 @@ The application uses Auth0 to manage the authenticated users and has the followi
 	
 ### Setup Auth0
 
-	14. Auth0 (https://auth0.com) is an external website that can provide for the management of users and permissions and was chosen as this Webapp's authentication method.  It has been set up using the following details:
+	15. Auth0 (https://auth0.com) is an external website that can provide for the management of users and permissions and was chosen as this Webapp's authentication method.  It has been set up using the following details:
 	```
 		AUTH0_DOMAIN = 'fsnd-tgrahame.eu.auth0.com'
 		ALGORITHMS = ['RS256']

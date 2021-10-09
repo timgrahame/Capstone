@@ -94,7 +94,7 @@ class Zoo(db.Model):
         db.session.commit()
     
     def zooupdate(self):
-        db.session.commit()
+        db.session.commit()         
 
     def zoodelete(self):
         db.session.delete(self)
