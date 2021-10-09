@@ -2,12 +2,11 @@
 
 KongsIsland is a Web Application design to support the captive breeding programmes for gorillas world wide.
 
-The application allows three levels of a user with different permissions for each.  These are:
+The application allows three roles with different permissions for each. A user HAS to be logged in. The roles are:
 
-	1. 	A zookeeper - Can only zoos and gorillas. 
+	1. 	A zookeeper - Can see only zoos and gorillas. 
 	2.	A vet - Can do everything a Zookeeper can do, can add zoos and gorillas, can modify zoos and gorillas, can delete zoos and gorillas, can view bookings.
 	3. 	A Zoo Director - Can do everything a vet can do plus also add and delete bookings and can also reset the database.
-	
 	
 The application uses Auth0 to manage the authenticated users and has the following permissions set:
 
