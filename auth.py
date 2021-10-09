@@ -1,13 +1,10 @@
+import os
 import json
 from flask import request, _request_ctx_stack, session, abort
 from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
-
-
-AUTH0_DOMAIN = 'fsnd-tgrahame.eu.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'kongsisland'
+from os import environ as env
 
 # ////////////////////////////////////////////////////////////////////////#
 # AuthError Exception
@@ -17,6 +14,9 @@ AuthError Exception
 A standardized way to communicate auth failure modes
 '''
 
+AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
+AUTH0_AUDIENCE = os.getenv('AUTH0_AUDIENCE')
+AUTH0_ALGORITHMS = os.getenv('AUTH0_ALGORITHMS')
 
 class AuthError(Exception):
     def __init__(self, error, status_code):
@@ -104,8 +104,8 @@ def verify_decode_jwt(token):
             payload = jwt.decode(
                                 token,
                                 rsa_key,
-                                algorithms=ALGORITHMS,
-                                audience=API_AUDIENCE,
+                                algorithms=AUTH0_ALGORITHMS,
+                                audience=AUTH0_AUDIENCE,
                                 issuer='https://' + AUTH0_DOMAIN + '/')
             return payload
 

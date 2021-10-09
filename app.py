@@ -31,6 +31,7 @@ AUTH0_CLIENT_SECRET = os.getenv('AUTH0_CLIENT_SECRET')
 AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
 AUTH0_BASE_URL = os.getenv('AUTH0_BASE_URL')
 AUTH0_AUDIENCE = os.getenv('AUTH0_AUDIENCE')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # ///////////////////////////////////////////////////////////////////////////#
 # App Config.
@@ -39,8 +40,8 @@ AUTH0_AUDIENCE = os.getenv('AUTH0_AUDIENCE')
 def create_app():
     app = Flask(__name__)
     setup_db(app)
+    app.secret_key = SECRET_KEY
     moment = Moment(app)
-    app.config.from_object('config')
     db = SQLAlchemy(app)
     CORS(app)
 
@@ -111,8 +112,16 @@ def create_app():
     @cross_origin()
     def login():
         print('Audience: {}'.format(AUTH0_AUDIENCE))
+
+        # ----Below commented text is for local testing and ensures callback
+        # ----is to local rather than Heroku -----
+        # ---------------------------------------------------------------------
+        # return auth0.authorize_redirect(
+        #   redirect_uri='%s/post-login' % AUTH0_LOCALCALLBACK_URL,
+        #   audience=AUTH0_AUDIENCE
+        # )
         return auth0.authorize_redirect(
-          redirect_uri='%s/post-login' % AUTH0_LOCALCALLBACK_URL,
+          redirect_uri='%s/post-login' % AUTH0_CALLBACK_URL,
           audience=AUTH0_AUDIENCE
         )
 
@@ -173,7 +182,7 @@ def create_app():
                         ' (' + str(num_upcoming) +
                         ' upcoming bookings)'
                         })
-
+        
         return jsonify({
             'success': True,
             'zoos': data,
@@ -573,7 +582,6 @@ def create_app():
                   "upcoming_bookings": upcoming_booking,
                   "upcoming_bookings_count": upcoming_bookings_count
         }
-        print(past_booking)
 
         return jsonify({
             'success': True,

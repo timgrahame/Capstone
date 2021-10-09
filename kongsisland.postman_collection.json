@@ -57,13 +57,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/search",
+							"raw": "{{host}}/zoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"search"
+								"zoos"
 							]
 						}
 					},
@@ -118,13 +117,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/search",
+							"raw": "{{host}}/gorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"search"
+								"gorillas"
 							]
 						}
 					},
@@ -158,13 +156,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/create",
+							"raw": "{{host}}/newzoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"create"
+								"newzoos"
 							]
 						}
 					},
@@ -189,13 +186,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/create",
+							"raw": "{{host}}/newgorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"create"
+								"newgorillas"
 							]
 						}
 					},
@@ -220,14 +216,13 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/1/edit",
+							"raw": "{{host}}/zoos/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"1",
-								"edit"
+								"1"
 							]
 						}
 					},
@@ -252,14 +247,13 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/1/edit",
+							"raw": "{{host}}/gorillas/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"1",
-								"edit"
+								"1"
 							]
 						}
 					},
@@ -284,14 +278,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/1/delete",
+							"raw": "{{host}}/zoos/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"1",
-								"delete"
+								"1"
 							]
 						}
 					},
@@ -316,14 +309,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/1/delete",
+							"raw": "{{host}}/gorillas/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"1",
-								"delete"
+								"1"
 							]
 						}
 					},
@@ -417,13 +409,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/search",
+							"raw": "{{host}}/zoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"search"
+								"zoos"
 							]
 						}
 					},
@@ -489,13 +480,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/gorillas/search",
+							"raw": "{{host}}/gorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"search"
+								"gorillas"
 							]
 						}
 					},
@@ -529,13 +519,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/create",
+							"raw": "{{host}}/newzoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"create"
+								"newzoos"
 							]
 						}
 					},
@@ -560,13 +549,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/create",
+							"raw": "{{host}}/newgorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"create"
+								"newgorillas"
 							]
 						}
 					},
@@ -591,14 +579,13 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/1/edit",
+							"raw": "{{host}}/zoos/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"1",
-								"edit"
+								"1"
 							]
 						}
 					},
@@ -623,14 +610,13 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/1/edit",
+							"raw": "{{host}}/gorillas/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"1",
-								"edit"
+								"1"
 							]
 						}
 					},
@@ -655,14 +641,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/1/delete",
+							"raw": "{{host}}/zoos/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"1",
-								"delete"
+								"1"
 							]
 						}
 					},
@@ -687,14 +672,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/1/delete",
+							"raw": "{{host}}/gorillas/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"1",
-								"delete"
+								"1"
 							]
 						}
 					},
@@ -706,7 +690,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2IyZWRjZDUxMDA3MGU1MmFlNyIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNjcxMjIxLCJleHAiOjE2MzM3NTc2MjEsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbInZpZXc6Ym9va2luZ3MiLCJ2aWV3OmdvcmlsbGFzIiwidmlldzp6b29zIl19.Jwncwa3MgEe-mV02xS8MqhEoKboj80iqCFfvU5VUrBcu8qRcar7zSlzGpmmovqDyOa2zBWPMqnZH0LyUP0ZO-U1UgX8rVCVLl0pDqjbMb2438Py7pNc-6BdxG0ehYUzZ3wjLZVTx3yxlLgArB7NGB20_QesZkSyG2JLAYMvu7qMVDZaXV2ES30LNljPCC-yjbiOuPbglkLXPuHSAXpxYxWiHflJ2tfAChoS1NbsJhO24Blfx6-UptDPvGZN51Qn8dOJkPxFRPp7388inPSl8NT-ra2Yo8ikQc2UeUWs4Ad3ao1I9nQ0J8Vu1iIH4D8AIV3NwGTPz8EeWENewWuqKsg",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2IyZWRjZDUxMDA3MGU1MmFlNyIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNzY1NzYyLCJleHAiOjE2MzM4NTIxNjIsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbInZpZXc6Ym9va2luZ3MiLCJ2aWV3OmdvcmlsbGFzIiwidmlldzp6b29zIl19.kYDleU3h6YdxyTg9tW0ftiRfbk5Abel1L3xZTTJDoqzlFGnJXsuR9ZyGSXyKRRo3SUplS6LwVoZzb8_y8H_E9rWm0YpMTZz2vioZC-MyMD2nPFez8TviyfiYhBNfNntVLVIc4OBxXXoeaxFxbKXy19jnQoOhqglyuWymGZEByAsZ0x5tIatDg7g8_Ku65Ji758jidEEVoxAqI6DwijHXuMf2tdwFozgDwh_HefNjP_7gZhbLxSdh1SiAJAC27dvb2cqZp3bqAWY4QXX145aOeVFA_bqVt8rDf41T4HU74UKFVnPWBzNLG_VIu2mU1jnVYG4A3Cw60kwsXBjutNpqCg",
 						"type": "string"
 					}
 				]
@@ -827,13 +811,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/search",
+							"raw": "{{host}}/zoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"search"
+								"zoos"
 							]
 						}
 					},
@@ -922,13 +905,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/search",
+							"raw": "{{host}}/gorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"search"
+								"gorillas"
 							]
 						}
 					},
@@ -962,13 +944,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/create",
+							"raw": "{{host}}/newzoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"create"
+								"newzoos"
 							]
 						}
 					},
@@ -1002,13 +983,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/gorillas/create",
+							"raw": "{{host}}/newgorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"create"
+								"newgorillas"
 							]
 						}
 					},
@@ -1042,14 +1022,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/1/edit",
+							"raw": "{{host}}/zoos/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"1",
-								"edit"
+								"1"
 							]
 						}
 					},
@@ -1083,14 +1062,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/gorillas/2/edit",
+							"raw": "{{host}}/gorillas/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"2",
-								"edit"
+								"2"
 							]
 						}
 					},
@@ -1115,14 +1093,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/2/delete",
+							"raw": "{{host}}/zoos/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"2",
-								"delete"
+								"2"
 							]
 						}
 					},
@@ -1147,14 +1124,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/2/delete",
+							"raw": "{{host}}/gorillas/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"2",
-								"delete"
+								"2"
 							]
 						}
 					},
@@ -1166,7 +1142,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2U0YjQyNDY4MDA2OWZkMWZjMSIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNjcxMTgzLCJleHAiOjE2MzM3NTc1ODMsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImFkZDpnb3JpbGxhcyIsImFkZDp6b29zIiwiZGVsZXRlOmdvcmlsbGFzIiwiZGVsZXRlOnpvb3MiLCJtb2RpZnk6Z29yaWxsYSIsIm1vZGlmeTp6b28iLCJ2aWV3OmJvb2tpbmdzIiwidmlldzpnb3JpbGxhcyIsInZpZXc6em9vcyJdfQ.CLy72dFy3rwb-tIxPKTCwDAGg20ccnMXVaLLhAJtLmaYlGa-75iMra0brHztK-Zs1k8cOby-I-CMw-ULrskkI1L1Ajf_-qyUhkN9hJcQZ2tYXzpFsFfsSAhjMttalP4WJAlJB8CkvokI04fHZErz97fsSJDu5ukXHzQC_vvDeK-x0racoCjG6pOGUEiaB-SB4f6pUS11v8AekTEy62O5SAqOldBv_IENUtOnLbGjtVBTlbaGPb_45GYxogz-AaJU4h_qg04-XSk130vNzls_mxBLC-oBC22fhwLaPdqdk9elvf9-Dkydu9a3KpkGzDMBSVgUNA6l-_ZOpIOos7FH5g",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2U0YjQyNDY4MDA2OWZkMWZjMSIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNzY1NDU2LCJleHAiOjE2MzM4NTE4NTYsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImFkZDpnb3JpbGxhcyIsImFkZDp6b29zIiwiZGVsZXRlOmdvcmlsbGFzIiwiZGVsZXRlOnpvb3MiLCJtb2RpZnk6Z29yaWxsYSIsIm1vZGlmeTp6b28iLCJ2aWV3OmJvb2tpbmdzIiwidmlldzpnb3JpbGxhcyIsInZpZXc6em9vcyJdfQ.Wz0BNW9RYkDrYVKX8pDHT6qej408Z_vcfhuGQG3diOFudmGUuPvi5TGj6xbFr6H9BRGw9K3Jld2oInHprFJXM1OameteyIB2a-0dT0u-ClwdEWdJX-lLFL8pOGpoFNQTYBeenIlWtxiXiphp6J56nDlFcf5v4zRac1O9XuN1tyLMro2PK9R1R_FNDo6oFJSAnV0VDuZQYiNdnU0dtH80RtWiROnD2xBiZEBvBF_3iqZtmi7rESUC_OnfM0L30VSODLyu_q4p8xLduJvSmGjsu-Wc6p1EMZQGc7GglM7Va3k3nl0NrbNe6vQsyFIZOjGZcNBut55r4TbJDCfOm6QTVw",
 						"type": "string"
 					}
 				]
@@ -1246,13 +1222,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/search",
+							"raw": "{{host}}/zoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"search"
+								"zoos"
 							]
 						}
 					},
@@ -1309,13 +1284,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/search",
+							"raw": "{{host}}/gorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"search"
+								"gorillas"
 							]
 						}
 					},
@@ -1349,13 +1323,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/create",
+							"raw": "{{host}}/newzoos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"zoos",
-								"create"
+								"newzoos"
 							]
 						}
 					},
@@ -1389,13 +1362,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/gorillas/create",
+							"raw": "{{host}}/newgorillas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"gorillas",
-								"create"
+								"newgorillas"
 							]
 						}
 					},
@@ -1429,14 +1401,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/zoos/3/edit",
+							"raw": "{{host}}/zoos/3",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"3",
-								"edit"
+								"3"
 							]
 						}
 					},
@@ -1470,14 +1441,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/gorillas/3/edit",
+							"raw": "{{host}}/gorillas/3",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"3",
-								"edit"
+								"3"
 							]
 						}
 					},
@@ -1502,14 +1472,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/zoos/3/delete",
+							"raw": "{{host}}/zoos/3",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"zoos",
-								"3",
-								"delete"
+								"3"
 							]
 						}
 					},
@@ -1534,14 +1503,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/gorillas/3/delete",
+							"raw": "{{host}}/gorillas/3",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"gorillas",
-								"3",
-								"delete"
+								"3"
 							]
 						}
 					},
@@ -1575,13 +1543,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/bookings/create",
+							"raw": "{{host}}/newbookings",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"bookings",
-								"create"
+								"newbookings"
 							]
 						}
 					},
@@ -1606,14 +1573,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/bookings/2/delete",
+							"raw": "{{host}}/bookings/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"bookings",
-								"2",
-								"delete"
+								"2"
 							]
 						}
 					},
@@ -1625,7 +1591,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2ZhZWRjZDUxMDA3MGU1MmIxNyIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNjcxMDc2LCJleHAiOjE2MzM3NTc0NzYsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImFkZDpib29raW5ncyIsImFkZDpnb3JpbGxhcyIsImFkZDp6b29zIiwiZGVsZXRlOmJvb2tpbmdzIiwiZGVsZXRlOmdvcmlsbGFzIiwiZGVsZXRlOnpvb3MiLCJtb2RpZnk6Z29yaWxsYSIsIm1vZGlmeTp6b28iLCJ2aWV3OmJvb2tpbmdzIiwidmlldzpnb3JpbGxhcyIsInZpZXc6em9vcyJdfQ.CpfqBNWA5073V3tU01MVe58S_-ZDY_11rciMSvASKZVZn031Y6sQxHxxiOMS3BGkoXBPBgh-n2hRw69Y4Miq4QUfDjwNN0hZ-05cwsMEVAADQrTgwdOQoZz5xg2iyVCxFhlBLLrWnMxVbll1L8uFT2AKI35emnrftAOkUaYWUtKaQIyAQlaEKEHjVQhLhsRYYN1o7f1_ihZLRA-4QSY4D-JFrn2s-1ELNS-buxPlSiCfBgfE1z9Y6qWGK3FcGBmfeJSLGTNDeApm_ijkkWbv8JueKv0nCPlQwjvMW2CXoKjRv0wTZVS43zeAr7L3GWPqfBf_DNPYlHNS3FGCvI_Tzw",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkQ4aERKQVh2LWljVTVnbU9iYWpvSyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdGdyYWhhbWUuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxNTZlY2ZhZWRjZDUxMDA3MGU1MmIxNyIsImF1ZCI6WyJrb25nc2lzbGFuZCIsImh0dHBzOi8vZnNuZC10Z3JhaGFtZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNzY4NTI1LCJleHAiOjE2MzM4NTQ5MjUsImF6cCI6IjcySkVOeVh6TUNGZDJIbVlCaGJqVWM4TzlTZU9KdWh6Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImFkZDpib29raW5ncyIsImFkZDpnb3JpbGxhcyIsImFkZDp6b29zIiwiZGVsZXRlOmJvb2tpbmdzIiwiZGVsZXRlOmdvcmlsbGFzIiwiZGVsZXRlOnpvb3MiLCJtb2RpZnk6Z29yaWxsYSIsIm1vZGlmeTp6b28iLCJ2aWV3OmJvb2tpbmdzIiwidmlldzpnb3JpbGxhcyIsInZpZXc6em9vcyJdfQ.SxASbk_UEfXUhqVND7ZQXv6GC0hksWt9SMwxIfFQoWLdh7cTHjy31EVn6vsWkWtMlc20_RS1GBK_OFwSTi975k7QwduNXk7IRO8XQDhCMjHHCFLIbqP6WS8LBcRxYDKBnHEZBj5FAKcjKFOxUCyAPEVobyNP2wLhMeqCj8tmHrHdxUPumPxm_k6ilppRQxh7CQ6wXdV68h6pICSJzmZRq-7cQ0WbbKMQWcJ902tZkL_qyVzISLP-P3k0Y0lSXu95U0YpXCPYJ5bAtQZStAOLcBhJfuMXXd5iE2evPK-82eL_4tzdsN_-FpRNVjfCpizukhvWQYAee1JVTkWUEIb4tQ",
 						"type": "string"
 					}
 				]

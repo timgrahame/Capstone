@@ -22,20 +22,20 @@ class KongsislandsTestCase(unittest.TestCase):
         self.app = create_app()
         self.client = self.app.test_client
 
-        # self.database_path = "postgresql://{}:{}@{}/{}".format(
-        #                 env['HEROKU_USER'],
-        #                 env['HEROKU_PASSWORD'],
-        #                 env['HEROKU_HOST'],
-        #                 env['HEROKU_NAME']
-        #                 )
-
-        self.database_name = "kongsisland"
         self.database_path = "postgresql://{}:{}@{}/{}".format(
-                            env['DB_USER'],
-                            env['DB_PASSWORD'],
-                            env['DB_HOST'],
-                            env['DB_NAME']
-                            )
+                        env['HEROKU_USER'],
+                        env['HEROKU_PASSWORD'],
+                        env['HEROKU_HOST'],
+                        env['HEROKU_NAME']
+                        )
+
+        # self.database_name = "kongsisland"
+        # self.database_path = "postgresql://{}:{}@{}/{}".format(
+        #                     env['DB_USER'],
+        #                     env['DB_PASSWORD'],
+        #                     env['DB_HOST'],
+        #                     env['DB_NAME']
+        #                     )
         
         setup_db(self.app, self.database_path)
 
