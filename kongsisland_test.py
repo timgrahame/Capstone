@@ -156,28 +156,28 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testa5_zoos_create_fail(self):
-        res = self.client().post('/zoos/create', json=self.test_zoo_add)
+        res = self.client().post('/newzoos', json=self.test_zoo_add)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testa6_zoos_amend_fail(self):
-        res = self.client().patch('/zoos/1/edit', json=self.test_zoo_chg)
+        res = self.client().patch('/zoos/1', json=self.test_zoo_chg)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testa7_zoos_delete_fail(self):
-        res = self.client().delete('/zoos/1/delete')
+        res = self.client().delete('/zoos/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testa8_gorillas_create_fail(self):
-        res = self.client().post('/gorillas/create',
+        res = self.client().post('/newgorillas',
                                  json=self.test_gorilla_add)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
@@ -185,7 +185,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testa9_gorillas_amend_fail(self):
-        res = self.client().patch('/gorillas/1/edit',
+        res = self.client().patch('/gorillas/1',
                                   json=self.test_gorilla_chg)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
@@ -193,14 +193,14 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testb1_gorillas_delete_fail(self):
-        res = self.client().delete('/gorillas/1/delete')
+        res = self.client().delete('/gorillas/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testb2_bookings_create_fail(self):
-        res = self.client().post('/bookings/create',
+        res = self.client().post('/newbookings',
                                  json=self.test_bookings_add)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
@@ -243,7 +243,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testb8_zookeeper_zoos_create_fail(self):
-        res = self.client().post('/zoos/create', json=self.test_zoo_add,
+        res = self.client().post('/newzoos', json=self.test_zoo_add,
                                  headers=self.zookeeper_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
@@ -251,7 +251,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def testb9_zookeeper_zoos_amend_fail(self):
-        res = self.client().patch('/zoos/1/edit', json=self.test_zoo_chg,
+        res = self.client().patch('/zoos/1', json=self.test_zoo_chg,
                                   headers=self.zookeeper_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
@@ -259,7 +259,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def testc1_zookeeper_zoos_delete_fail(self):
-        res = self.client().delete('/zoos/1/delete',
+        res = self.client().delete('/zoos/1',
                                    headers=self.zookeeper_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
@@ -267,7 +267,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def testc2_zookeeper_gorillas_create_fail(self):
-        res = self.client().post('/gorillas/create',
+        res = self.client().post('/newgorillas',
                                  json=self.test_gorilla_add,
                                  headers=self.zookeeper_token)
         data = json.loads(res.data)
@@ -276,7 +276,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def testc3_zookeeper_gorillas_amend_fail(self):
-        res = self.client().patch('/gorillas/1/edit',
+        res = self.client().patch('/gorillas/1',
                                   json=self.test_gorilla_chg,
                                   headers=self.zookeeper_token)
         data = json.loads(res.data)
@@ -285,7 +285,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def testc4_zookeeper_gorillas_delete_fail(self):
-        res = self.client().delete('/gorillas/1/delete',
+        res = self.client().delete('/gorillas/1',
                                    headers=self.zookeeper_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
@@ -293,7 +293,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def testc5_zookeeper_bookings_create_fail(self):
-        res = self.client().post('/bookings/create',
+        res = self.client().post('/newbookings',
                                  json=self.test_bookings_add,
                                  headers=self.zookeeper_token)
         data = json.loads(res.data)
@@ -302,7 +302,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def testc6_zookeeper_bookings_create_fail(self):
-        res = self.client().delete('/bookings/1/delete',
+        res = self.client().delete('/bookings/1',
                                    headers=self.zookeeper_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
@@ -314,12 +314,6 @@ class KongsislandsTestCase(unittest.TestCase):
     # ////////////////////////////////////////////////////////////////////////#
 
     def testc7_zoos_vet_pass(self):
-        res = self.client().get('/zoos', headers=self.vet_token)
-        data = json.loads(res.data)
-        self.assertEqual(res.status_code, 200)
-        self.assertEqual(data['success'], True)
-
-    def testc8_zoos_vet_pass(self):
         res = self.client().get('/zoos', headers=self.vet_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
@@ -344,7 +338,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testd3_zoos_create_vet_pass(self):
-        res = self.client().post('/zoos/create',
+        res = self.client().post('/newzoos',
                                  json=self.test_zoo_add,
                                  headers=self.vet_token)
         data = json.loads(res.data)
@@ -352,7 +346,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testd4_zoos_amend_vet_pass(self):
-        res = self.client().patch('/zoos/1/edit',
+        res = self.client().patch('/zoos/1',
                                   json=self.test_zoo_chg,
                                   headers=self.vet_token)
         data = json.loads(res.data)
@@ -360,14 +354,14 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testd5_zoos_delete_vet_pass(self):
-        res = self.client().delete('/zoos/1/delete',
+        res = self.client().delete('/zoos/1',
                                    headers=self.vet_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
     def testd6_gorillas_create_vet_pass(self):
-        res = self.client().post('/gorillas/create',
+        res = self.client().post('/newgorillas',
                                  json=self.test_gorilla_add,
                                  headers=self.vet_token)
         data = json.loads(res.data)
@@ -375,7 +369,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testd7_gorillas_amend_vet_pass(self):
-        res = self.client().patch('/gorillas/1/edit',
+        res = self.client().patch('/gorillas/1',
                                   json=self.test_gorilla_chg,
                                   headers=self.vet_token)
         data = json.loads(res.data)
@@ -383,14 +377,14 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testd8_gorillas_delete_vet_pass(self):
-        res = self.client().delete('/gorillas/1/delete',
+        res = self.client().delete('/gorillas/1',
                                    headers=self.vet_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
     def testd9_bookings_create_vet_fail(self):
-        res = self.client().post('/bookings/create',
+        res = self.client().post('/newbookings',
                                  json=self.test_bookings_add,
                                  headers=self.vet_token)
         data = json.loads(res.data)
@@ -399,7 +393,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'You are not Authorized to do this')
 
     def teste1_bookings_create_vet_fail(self):
-        res = self.client().delete('/bookings/1/delete',
+        res = self.client().delete('/bookings/1',
                                    headers=self.vet_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 403)
@@ -412,12 +406,6 @@ class KongsislandsTestCase(unittest.TestCase):
 
     def teste2_zoodirect_zoos_pass(self):
 
-        res = self.client().get('/zoos', headers=self.zoodirector_token)
-        data = json.loads(res.data)
-        self.assertEqual(res.status_code, 200)
-        self.assertEqual(data['success'], True)
-
-    def teste3_zoodirect_zoos_pass(self):
         res = self.client().get('/zoos', headers=self.zoodirector_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
@@ -442,7 +430,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def teste7_zoodirect_zoos_create_pass(self):
-        res = self.client().post('/zoos/create',
+        res = self.client().post('/newzoos',
                                  json=self.test_zoo_add,
                                  headers=self.zoodirector_token)
         data = json.loads(res.data)
@@ -450,7 +438,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def teste8_zoodirect_zoos_amend_pass(self):
-        res = self.client().patch('/zoos/3/edit',
+        res = self.client().patch('/zoos/3',
                                   json=self.test_zoo_chg,
                                   headers=self.zoodirector_token)
         data = json.loads(res.data)
@@ -458,14 +446,14 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def teste9_zoodirect_zoos_delete_pass(self):
-        res = self.client().delete('/zoos/3/delete',
+        res = self.client().delete('/zoos/3',
                                    headers=self.zoodirector_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
     def testf1_zoodirect_gorillas_create_pass(self):
-        res = self.client().post('/gorillas/create',
+        res = self.client().post('/newgorillas',
                                  json=self.test_gorilla_add,
                                  headers=self.zoodirector_token)
         data = json.loads(res.data)
@@ -473,7 +461,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testf2_zoodirect_gorillas_amend_pass(self):
-        res = self.client().patch('/gorillas/3/edit',
+        res = self.client().patch('/gorillas/3',
                                   json=self.test_gorilla_chg,
                                   headers=self.zoodirector_token)
         data = json.loads(res.data)
@@ -481,14 +469,14 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testf3_zoodirect_gorillas_delete_pass(self):
-        res = self.client().delete('/gorillas/3/delete',
+        res = self.client().delete('/gorillas/3',
                                    headers=self.zoodirector_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
     def testf4_zoodirect_bookings_create_pass(self):
-        res = self.client().post('/bookings/create',
+        res = self.client().post('/newbookings',
                                  json=self.test_bookings_add,
                                  headers=self.zoodirector_token)
         data = json.loads(res.data)
@@ -496,7 +484,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
 
     def testf5_zoodirect_bookings_create_pass(self):
-        res = self.client().delete('/bookings/1/delete',
+        res = self.client().delete('/bookings/1',
                                    headers=self.zoodirector_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
@@ -507,7 +495,7 @@ class KongsislandsTestCase(unittest.TestCase):
     # ///////////////////////////////////////////////////////////////////////////////#
 
     def test_gorillas_delete_nonexistent(self):
-        res = self.client().delete('/gorillas/34/delete',
+        res = self.client().delete('/gorillas/34',
                                    headers=self.zoodirector_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 422)
@@ -516,7 +504,7 @@ class KongsislandsTestCase(unittest.TestCase):
                          'unprocessable error - does the entity exist?')
 
     def test_zoos_delete_nonexistent(self):
-        res = self.client().delete('/zoos/34/delete',
+        res = self.client().delete('/zoos/34',
                                    headers=self.zoodirector_token)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 422)
@@ -525,7 +513,7 @@ class KongsislandsTestCase(unittest.TestCase):
                          'unprocessable error - does the entity exist?')
 
     def test_zoodirect_zoos_amend_nonexistent(self):
-        res = self.client().patch('/zoos/34/edit',
+        res = self.client().patch('/zoos/34',
                                   json=self.test_zoo_chg,
                                   headers=self.zoodirector_token)
         data = json.loads(res.data)
@@ -535,7 +523,7 @@ class KongsislandsTestCase(unittest.TestCase):
                          'unprocessable error - does the entity exist?')
 
     def test_zoodirect_zoos_amend_nonexistent(self):
-        res = self.client().patch('/gorillas/34/edit',
+        res = self.client().patch('/gorillas/34',
                                   json=self.test_zoo_chg,
                                   headers=self.zoodirector_token)
         data = json.loads(res.data)
