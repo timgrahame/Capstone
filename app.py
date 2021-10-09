@@ -38,6 +38,7 @@ AUTHORIZE_URL = os.getenv('AUTHORIZE_URL')
 # App Config.
 # ///////////////////////////////////////////////////////////////////////////#
 
+
 def create_app():
     app = Flask(__name__)
     setup_db(app)
@@ -47,7 +48,7 @@ def create_app():
     CORS(app)
 
 #  To reset database uncomment line below or use the button on the front page
-    #db_drop_and_create_all()
+    # db_drop_and_create_all()
 
     # ---------------------------------------------------------------------------#
     # Button to reset database on main front page.
@@ -57,7 +58,7 @@ def create_app():
     def reset_database():
         db_drop_and_create_all()
         return render_template('pages/home.html')
-    
+
     @app.after_request
     def after_request(response):
         response.headers.add(
@@ -185,7 +186,7 @@ def create_app():
                         ' (' + str(num_upcoming) +
                         ' upcoming bookings)'
                         })
-        
+
         return jsonify({
             'success': True,
             'zoos': data,
@@ -931,6 +932,7 @@ def create_app():
         }), error.status_code
 
     return app
+
 
 app = create_app()
 

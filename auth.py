@@ -18,6 +18,7 @@ AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
 AUTH0_AUDIENCE = os.getenv('AUTH0_AUDIENCE')
 AUTH0_ALGORITHMS = os.getenv('AUTH0_ALGORITHMS')
 
+
 class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error

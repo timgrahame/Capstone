@@ -31,8 +31,8 @@ class KongsislandsTestCase(unittest.TestCase):
         #                 env['HEROKU_NAME']
         #                 )
 
-        #Uncomment below to test local
-        
+        # Uncomment below to test local
+
         self.database_name = "kongsisland"
         self.database_path = "postgresql://{}:{}@{}/{}".format(
                             env['DB_USER'],
@@ -40,7 +40,7 @@ class KongsislandsTestCase(unittest.TestCase):
                             env['DB_HOST'],
                             env['DB_NAME']
                             )
-        
+
         setup_db(self.app, self.database_path)
 
         with self.app.app_context():
@@ -136,49 +136,56 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa2_zoos_page_fail(self):
         res = self.client().get('/zoos/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa3_gorillas_fail(self):
         res = self.client().get('/gorillas')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa4_gorillas_page_fail(self):
         res = self.client().get('/gorillas/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa5_zoos_create_fail(self):
         res = self.client().post('/newzoos', json=self.test_zoo_add)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa6_zoos_amend_fail(self):
         res = self.client().patch('/zoos/1', json=self.test_zoo_chg)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa7_zoos_delete_fail(self):
         res = self.client().delete('/zoos/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa8_gorillas_create_fail(self):
         res = self.client().post('/newgorillas',
@@ -186,7 +193,8 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testa9_gorillas_amend_fail(self):
         res = self.client().patch('/gorillas/1',
@@ -194,14 +202,16 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testb1_gorillas_delete_fail(self):
         res = self.client().delete('/gorillas/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testb2_bookings_create_fail(self):
         res = self.client().post('/newbookings',
@@ -209,14 +219,16 @@ class KongsislandsTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     def testb3_bookings_create_fail(self):
         res = self.client().delete('/bookings/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'You need to be logged in to view this page.')
+        self.assertEqual(
+            data['message'], 'You need to be logged in to view this page.')
 
     # ////////////////////////////////////////////////////////////////////////#
     # Test Zoo Keeper User
