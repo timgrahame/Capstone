@@ -208,7 +208,7 @@ class KongsislandsTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to find the appropriate key')
 
     def testb3_bookings_create_fail(self):
-        res = self.client().delete('/bookings/1/delete')
+        res = self.client().delete('/bookings/1')
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['success'], False)

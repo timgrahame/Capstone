@@ -25,6 +25,7 @@ from six.moves.urllib.parse import urlencode
 from auth import AuthError, requires_auth
 
 AUTH0_CALLBACK_URL = os.getenv('AUTH0_CALLBACK_URL')
+AUTH0_LOCALCALLBACK_URL = os.getenv('AUTH0_LOCALCALLBACK_URL')
 AUTH0_CLIENT_ID = os.getenv('AUTH0_CLIENT_ID')
 AUTH0_CLIENT_SECRET = os.getenv('AUTH0_CLIENT_SECRET')
 AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
@@ -107,21 +108,13 @@ def create_app():
     # ---------------------------------------------------------------------------#
 
     @app.route('/login', methods=['GET'])
-    # @cross_origin()
-    # def login():
-    #     print('Audience: {}'.format(AUTH0_AUDIENCE))
-    #     return auth0.authorize_redirect(
-    #       redirect_uri='%s/post-login' % AUTH0_CALLBACK_URL,
-    #       audience=AUTH0_AUDIENCE
-    #     )
-    def generate_auth_url():
-        url = f'https://{AUTH0_DOMAIN}/authorize' \
-            f'?audience={AUTH0_AUDIENCE}' \
-            f'&response_type=token&client_id=' \
-            f'{AUTH0_CLIENT_ID}&redirect_uri="%s/post-login" % {AUTH0_CALLBACK_URL}'
-        return jsonify({
-        'url': url
-        })
+    @cross_origin()
+    def login():
+        print('Audience: {}'.format(AUTH0_AUDIENCE))
+        return auth0.authorize_redirect(
+          redirect_uri='%s/post-login' % AUTH0_LOCALCALLBACK_URL,
+          audience=AUTH0_AUDIENCE
+        )
 
     # ---------------------------------------------------------------------------#
     # route handler for home page once logged in
