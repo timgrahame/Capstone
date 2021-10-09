@@ -185,7 +185,7 @@ def create_app():
     # search for zoos
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos/search', methods=['POST'])
+    @app.route('/zoos', methods=['POST'])
     @requires_auth('view:zoos')
     def search_Zoos(payload):
         search_term = request.form.get('search_term', '')
@@ -288,7 +288,7 @@ def create_app():
     # open create zoo page
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos/create', methods=['GET'])
+    @app.route('/zoos', methods=['GET'])
     @requires_auth('add:zoos')
     def create_zoo_form(payload):
         form = ZooForm()
@@ -298,7 +298,7 @@ def create_app():
     # create new zoo endpoint
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos/create', methods=['POST'])
+    @app.route('/zoos', methods=['POST'])
     @requires_auth('add:zoos')
     def create_zoo_submission(payload):
         error = False
@@ -345,7 +345,7 @@ def create_app():
     # open zoo page for editting
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos/<int:zoo_id>/edit', methods=['GET'])
+    @app.route('/zoos/<int:zoo_id>', methods=['GET'])
     @cross_origin()
     @requires_auth('modify:zoo')
     def edit_zoo(payload, zoo_id):
@@ -358,7 +358,7 @@ def create_app():
     # edit zoo endpoint
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos/<int:zoo_id>/edit', methods=['PATCH'])
+    @app.route('/zoos/<int:zoo_id>', methods=['PATCH'])
     @cross_origin()
     @requires_auth('modify:zoo')
     def edit_zoo_submission(payload, zoo_id):
@@ -416,7 +416,7 @@ def create_app():
     # Delete specific zoo
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos/<int:zoo_id>/delete', methods=['DELETE'])
+    @app.route('/zoos/<int:zoo_id>', methods=['DELETE'])
     @cross_origin()
     @requires_auth('delete:zoos')
     def delete_zoo(payload, zoo_id):
@@ -477,7 +477,7 @@ def create_app():
     # search for gorillas endpoint
     # ---------------------------------------------------------------------------#
 
-    @app.route('/gorillas/search', methods=['POST'])
+    @app.route('/gorillas', methods=['POST'])
     @cross_origin()
     @requires_auth('view:gorillas')
     def search_gorillas(payload):
@@ -586,7 +586,7 @@ def create_app():
     #  open specific gorilla page ready for editing
     # ---------------------------------------------------------------------------#
 
-    @app.route('/gorillas/<int:gorilla_id>/edit', methods=['GET'])
+    @app.route('/gorillas/<int:gorilla_id>', methods=['GET'])
     @cross_origin()
     @requires_auth('modify:gorilla')
     def edit_gorilla(payload, gorilla_id):
@@ -611,7 +611,7 @@ def create_app():
     # Edit Gorilla
     # ---------------------------------------------------------------------------#
 
-    @app.route('/gorillas/<int:gorilla_id>/edit', methods=['PATCH'])
+    @app.route('/gorillas/<int:gorilla_id>', methods=['PATCH'])
     @cross_origin()
     @requires_auth('modify:gorilla')
     def edit_gorilla_submission(payload, gorilla_id):
@@ -667,7 +667,7 @@ def create_app():
     # Get add Gorilla page
     # ---------------------------------------------------------------------------#
 
-    @app.route('/gorillas/create', methods=['GET'])
+    @app.route('/gorillas', methods=['GET'])
     @cross_origin()
     @requires_auth('add:gorillas')
     def create_gorilla_form(payload):
@@ -720,7 +720,7 @@ def create_app():
     # Delete Gorilla
     # ---------------------------------------------------------------------------#
 
-    @app.route('/gorillas/<int:gorilla_id>/delete', methods=['DELETE'])
+    @app.route('/gorillas/<int:gorilla_id>', methods=['DELETE'])
     @cross_origin()
     @requires_auth('delete:gorillas')
     def delete_gorilla(payload, gorilla_id):
@@ -786,7 +786,7 @@ def create_app():
     # Open Create Bookings page
     # ---------------------------------------------------------------------------#
 
-    @app.route('/bookings/create')
+    @app.route('/bookings')
     @cross_origin()
     @requires_auth('add:bookings')
     def create_bookings(payload):
@@ -798,7 +798,7 @@ def create_app():
     # Post New Booking
     # ---------------------------------------------------------------------------#
 
-    @app.route('/bookings/create', methods=['POST'])
+    @app.route('/bookings', methods=['POST'])
     @cross_origin()
     @requires_auth('add:bookings')
     def create_booking_submission(payload):
@@ -833,7 +833,7 @@ def create_app():
     # Delete Booking
     # ---------------------------------------------------------------------------#
 
-    @app.route('/bookings/<int:booking_id>/delete', methods=['DELETE'])
+    @app.route('/bookings/<int:booking_id>', methods=['DELETE'])
     @cross_origin()
     @requires_auth('delete:bookings')
     def delete_booking(payload, booking_id):
