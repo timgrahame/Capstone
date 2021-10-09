@@ -1,4 +1,4 @@
-# Coffee Shop Backend
+# Kongs Island Backend
 
 KongsIsland is a Web Application design to support the captive breeding programmes for gorillas world wide.
 
