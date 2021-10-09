@@ -119,9 +119,9 @@ def create_app():
             f'?audience={AUTH0_AUDIENCE}' \
             f'&response_type=token&client_id=' \
             f'{AUTH0_CLIENT_ID}&redirect_uri="%s/post-login" % {AUTH0_CALLBACK_URL}'
-    return jsonify({
+        return jsonify({
         'url': url
-    })
+        })
 
     # ---------------------------------------------------------------------------#
     # route handler for home page once logged in
