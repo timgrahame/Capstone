@@ -116,17 +116,17 @@ def create_app():
 
         # ------local connections-------
 
-        # return auth0.authorize_redirect(
-        #   redirect_uri='%s/post-login' % AUTH0_LOCALCALLBACK_URL,
-        #   audience=AUTH0_AUDIENCE
-        # )
+        return auth0.authorize_redirect(
+          redirect_uri='%s/post-login' % AUTH0_LOCALCALLBACK_URL,
+          audience=AUTH0_AUDIENCE
+        )
 
         # ------heroklu connections-------
 
-        return auth0.authorize_redirect(
-          redirect_uri='%s/post-login' % AUTH0_CALLBACK_URL,
-          audience=AUTH0_AUDIENCE
-        )
+        # return auth0.authorize_redirect(
+        #   redirect_uri='%s/post-login' % AUTH0_CALLBACK_URL,
+        #   audience=AUTH0_AUDIENCE
+        # )
 
     # ---------------------------------------------------------------------------#
     # route handler for home page once logged in

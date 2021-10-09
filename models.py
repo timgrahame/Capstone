@@ -12,21 +12,21 @@ load_dotenv()
 
 # Below is the Heroku path
 
-database_path = "postgresql://{}:{}@{}/{}".format(
-   env['HEROKU_USER'],
-   env['HEROKU_PASSWORD'],
-   env['HEROKU_HOST'],
-   env['HEROKU_NAME']
-   )
+# database_path = "postgresql://{}:{}@{}/{}".format(
+#    env['HEROKU_USER'],
+#    env['HEROKU_PASSWORD'],
+#    env['HEROKU_HOST'],
+#    env['HEROKU_NAME']
+#    )
 
 # Below is the local database path
 
-# database_path = "postgresql://{}:{}@{}/{}".format(
-#    env['DB_USER'],
-#    env['DB_PASSWORD'],
-#    env['DB_HOST'],
-#    env['DB_NAME']
-#    )
+database_path = "postgresql://{}:{}@{}/{}".format(
+   env['DB_USER'],
+   env['DB_PASSWORD'],
+   env['DB_HOST'],
+   env['DB_NAME']
+   )
 
 db = SQLAlchemy()
 
