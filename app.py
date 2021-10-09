@@ -288,7 +288,7 @@ def create_app():
     # open create zoo page
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos', methods=['GET'])
+    @app.route('/newzoos', methods=['GET'])
     @requires_auth('add:zoos')
     def create_zoo_form(payload):
         form = ZooForm()
@@ -298,7 +298,7 @@ def create_app():
     # create new zoo endpoint
     # ---------------------------------------------------------------------------#
 
-    @app.route('/zoos', methods=['POST'])
+    @app.route('/newzoos', methods=['POST'])
     @requires_auth('add:zoos')
     def create_zoo_submission(payload):
         error = False
@@ -667,14 +667,14 @@ def create_app():
     # Get add Gorilla page
     # ---------------------------------------------------------------------------#
 
-    @app.route('/gorillas', methods=['GET'])
+    @app.route('/newgorillas', methods=['GET'])
     @cross_origin()
     @requires_auth('add:gorillas')
     def create_gorilla_form(payload):
         form = GorillaForm()
         return render_template('forms/new_gorilla.html', form=form)
 
-    @app.route('/gorillas/create', methods=['POST'])
+    @app.route('/newgorillas', methods=['POST'])
     @cross_origin()
     @requires_auth('add:gorillas')
     def create_gorilla_submission(payload):
@@ -786,7 +786,7 @@ def create_app():
     # Open Create Bookings page
     # ---------------------------------------------------------------------------#
 
-    @app.route('/bookings')
+    @app.route('/newbookings')
     @cross_origin()
     @requires_auth('add:bookings')
     def create_bookings(payload):
@@ -798,7 +798,7 @@ def create_app():
     # Post New Booking
     # ---------------------------------------------------------------------------#
 
-    @app.route('/bookings', methods=['POST'])
+    @app.route('/newbookings', methods=['POST'])
     @cross_origin()
     @requires_auth('add:bookings')
     def create_booking_submission(payload):
